@@ -1,0 +1,62 @@
+<script type="text/x-red" data-template-name="xively">
+  <div class="form-row">
+    <label for="node-input-api_key"><i class="icon-lock"></i> <span data-i18n="xively.api"></span></label>
+    <input type="text" id="node-input-api_key" data-i18n="[placeholder]xively.api">
+  </div>
+  <br />
+  <div class="form-row">
+    <label for="node-input-feed_id"><i class="icon-lock"></i> <span data-i18n="xively.feed.label"></span></label>
+    <input type="text" id="node-input-feed_id" data-i18n="[placeholder]xively.feed.placeholder">
+  </div>
+  <br />
+  <div class="form-row">
+    <label for="node-input-id_data"><i class="icon-tasks"></i> <span data-i18n="xively.data"></span></label>
+    <input type="text" id="node-input-id_data" data-i18n="[placeholder]xively.data">
+  </div>
+  <br/>
+  <div class="form-row">
+    <label for="node-input-name"><i class="icon-tag"></i> <span data-i18n="xively.name"></span></label>
+    <input type="text" id="node-input-name" data-i18n="[placeholder]xively.name">
+  </div>
+</script>
+
+<script type="text/x-red" data-help-name="xively">
+  <font size="-2">Connect products and operations to the internet</font>
+  <h2><p>Xively</p></h2>
+  <font size="-1"><p>Xively offers an Internet of Things (IoT) platform as a service, business services, and partners that enable businesses to quickly connect products and operations to the Internet.
+  <br />A free Xively account is necessary : http://xively.com</p></font>
+
+  <p><b>Node description :</b></p>
+  <font size="-1"><p>The node sends the payload of the message on your Xively account and create automatically a graph. The id_data is used as the name of the graph</p></font>
+
+  <p><b>How to :</b></p>
+  <font size="-1"><p>- api_key : Token which is used to authenticate.
+  <br />- feed_id : Token which corresponds to your device id.
+  <br />- id_data : Name of the graph in which save the data.</p>
+  <br /><b>WARNING :</b> Space and apostrophe character for the id data are replaced by underscore !!</p></font>
+
+  <p><b>Time : </b></p>
+  <font size="-1">A time can be specified in <b>msg.timestamp</b>. This time has to be a timestamp.<br /></font>
+</script>
+
+<script type="text/javascript">
+  RED.nodes.registerType('xively',{
+    category: 'storage-output',
+    color: "#fff",
+    defaults: {
+      name: {value: ""},
+      feed_id : {values: ""},
+      api_key: {value: ""},
+      id_data: {value: ""}
+    },
+    inputs:1,
+    outputs:0,
+    icon: "xively.png",
+    label: function() {
+      return this.name||"xively";
+    },
+    labelStyle: function() {
+      return this.name?"node_label_italic":"";
+    }
+  });
+</script>

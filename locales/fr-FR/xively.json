@@ -1,0 +1,11 @@
+{
+    "xively": {
+        "api": "Clé d'API",
+        "feed": {
+            "label": "Feed ID",
+            "placeholder": "ID du flux"
+        },
+        "data": "ID données",
+        "name": "Nom"
+    }
+}

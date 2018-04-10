@@ -1,0 +1,20 @@
+{
+  "name": "ttb-node-xively",
+  "version": "0.0.1",
+  "description": "This node allow the user to connect products and operations to the internet.",
+  "node-red": {
+    "nodes": {
+      "xively": "xively.js"
+    }
+  },
+  "keywords": [
+    "TheThingBox",
+    "node-red",
+    "xively"
+  ],
+  "dependencies": {
+    "request": "2.85.0"
+  },
+  "author": "http://www.digitalairways.com/",
+  "license": "http://www.wtfpl.net"
+}
